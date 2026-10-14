@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /csc
+Disallow: /dashboard
+Disallow: /profile
+
+Sitemap: https://sih-setu.vercel.app/sitemap.xml

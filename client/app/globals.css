@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --gov-bg: #F1F5F9;
+    --gov-card-bg: #FFFFFF;
+    --gov-border: #CBD5E1;
+    --gov-text-main: #0F172A;
+    --gov-text-muted: #334155;
+  }
+
+  html.dark {
+    --gov-bg: #0B132B;
+    --gov-card-bg: #1E293B;
+    --gov-border: #334155;
+    --gov-text-main: #F8FAFC;
+    --gov-text-muted: #CBD5E1;
+  }
+
+  body {
+    background-color: var(--gov-bg) !important;
+    color: var(--gov-text-main) !important;
+    font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Accessibility Focus State */
+*:focus-visible {
+  outline: 2px solid #D97706 !important;
+  outline-offset: 2px !important;
+  border-radius: 0.25rem;
+}
+
+/* UX4G Government Top Utility Strip */
+.ux4g-header-strip {
+  background-color: #082544 !important;
+  color: #F8FAFC !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html.dark .ux4g-header-strip {
+  background-color: #051424 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Main Navigation Header */
+.ux4g-header-main {
+  background: linear-gradient(180deg, #0F3B66 0%, #082544 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 10px rgba(8, 37, 68, 0.3);
+}
+
+html.dark .ux4g-header-main {
+  background: linear-gradient(180deg, #0A2744 0%, #051424 100%) !important;
+}
+
+/* Authentic Compact Govt Card System with Guaranteed Contrast */
+.ux4g-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+  border-top: 4px solid #0F3B66 !important;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.15s ease-in-out;
+}
+
+.ux4g-card h1,
+.ux4g-card h2,
+.ux4g-card h3,
+.ux4g-card h4,
+.ux4g-card strong {
+  color: #0F172A !important;
+}
+
+.ux4g-card p,
+.ux4g-card li,
+.ux4g-card span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-white"]):not(.ux4g-button-primary *):not(.ux4g-button-secondary *):not(.ux4g-button-saffron *) {
+  color: #334155 !important;
+}
+
+html.dark .ux4g-card {
+  background-color: #1E293B !important;
+  border: 1px solid #334155 !important;
+  color: #F8FAFC !important;
+  border-top: 4px solid #D97706 !important;
+}
+
+html.dark .ux4g-card h1,
+html.dark .ux4g-card h2,
+html.dark .ux4g-card h3,
+html.dark .ux4g-card h4,
+html.dark .ux4g-card strong {
+  color: #F8FAFC !important;
+}
+
+html.dark .ux4g-card p,
+html.dark .ux4g-card li,
+html.dark .ux4g-card span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-white"]):not(.ux4g-button-primary *):not(.ux4g-button-secondary *):not(.ux4g-button-saffron *) {
+  color: #CBD5E1 !important;
+}
+
+.ux4g-card:hover {
+  box-shadow: 0 4px 12px -2px rgba(15, 59, 102, 0.12);
+  border-color: #94A3B8 !important;
+}
+
+html.dark .ux4g-card:hover {
+  border-color: #64748B !important;
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Institutional Button UI Tokens */
+.ux4g-button-primary,
+.ux4g-button-primary * {
+  color: #FFFFFF !important;
+}
+
+.ux4g-button-primary {
+  background-color: #0F3B66 !important;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #082544;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease;
+}
+
+html.dark .ux4g-button-primary {
+  background-color: #0284C7 !important;
+  border-color: #0369A1 !important;
+}
+
+.ux4g-button-primary:hover {
+  background-color: #082544 !important;
+}
+
+html.dark .ux4g-button-primary:hover {
+  background-color: #0369A1 !important;
+}
+
+.ux4g-button-secondary {
+  background-color: #FFFFFF !important;
+  color: #0F3B66 !important;
+  border: 1px solid #94A3B8 !important;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease;
+}
+
+html.dark .ux4g-button-secondary {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #475569 !important;
+}
+
+.ux4g-button-secondary:hover {
+  background-color: #F1F5F9 !important;
+  color: #082544 !important;
+}
+
+html.dark .ux4g-button-secondary:hover {
+  background-color: #334155 !important;
+  color: #FFFFFF !important;
+}
+
+.ux4g-button-saffron,
+.ux4g-button-saffron * {
+  color: #FFFFFF !important;
+}
+
+.ux4g-button-saffron {
+  background-color: #D97706 !important;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #B45309;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease;
+}
+
+.ux4g-button-saffron:hover {
+  background-color: #B45309 !important;
+}
+
+/* Government Portal Ticker */
+.gov-ticker-bar {
+  background-color: #FFF7ED !important;
+  border-bottom: 1px solid #FDBA74 !important;
+  color: #9A3412 !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+html.dark .gov-ticker-bar {
+  background-color: #451A03 !important;
+  border-bottom-color: #78350F !important;
+  color: #FFEDD5 !important;
+}
+
+/* Form Inputs */
+input, select, textarea {
+  border-radius: 0.25rem !important;
+  border-color: #CBD5E1 !important;
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+html.dark input, html.dark select, html.dark textarea {
+  border-color: #475569 !important;
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #D97706 !important;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 2px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
